@@ -1,8 +1,11 @@
+var controllers = require('../controllers')
+  , home = controllers.Home
+  , blog = controllers.Blog;
 
-/*
- * GET home page.
- */
-
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+module.exports = function( app ){
+  //Home page
+  app.get( '/', home.index );
+  
+  //Blogs
+  app.get( '/blog', blog.index );
 };
