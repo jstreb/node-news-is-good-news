@@ -1,14 +1,19 @@
-
-/**
- * Module dependencies.
- */
-
-var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , path = require('path');
+var env = process.env.NODE_ENV || 'development';
+var express = require('express');
+var routes = require('./routes');
+var http = require('http');
+var path = require('path');
+var config = require('./configs')[env];
+var mongo = require("./models/mongo");
 
 var app = express();
+
+mongo.connect(config.mongodb, function(err) {
+  if (err) {
+    throw err;
+  }
+  console.info('Connected to Mongo');
+});
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
