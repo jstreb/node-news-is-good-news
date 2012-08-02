@@ -15,6 +15,10 @@ module.exports.index = function( req, res ) {
   });
 };
 
+module.exports.newBlog = function( req, res ) {
+  res.render( 'blog/new', { title: 'Blog New' } );
+};
+
 module.exports.create = function( req, res ) {
   var data = req.body;
   var blog = new Blog( {
