@@ -8,4 +8,6 @@ module.exports = function( app ){
   
   //Blogs
   app.get( '/blog', blog.index );
+  app.get( '/blog/new', blog.newBlog );
+  app.post( '/blog', blog.create );
 };

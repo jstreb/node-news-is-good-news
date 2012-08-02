@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  form(method='post', action='/blog')
+    h3 Title
+    input( id='title', name='title', type='text' )
+    
+    h3 Article
+    textarea( id='article', name='article')
+  
+    h3 Author
+    input( id='authur', name='author', type='text')
+    
+    br
+    button Submit

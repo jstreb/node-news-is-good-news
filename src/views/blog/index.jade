@@ -2,3 +2,9 @@ extends ../layout
 
 block content
   h1 My blog landing page.
+  ul
+  - for(var i=0, len=blogs.length; i<len; i++)
+    li 
+      a(href='/blog/' + blogs[i]._id ) #{blogs[i].title}
+  
+  a(href="/blog/new") New Article
