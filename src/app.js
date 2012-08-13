@@ -5,6 +5,7 @@ var http = require('http');
 var path = require('path');
 var config = require('./configs')[env];
 var mongo = require("./models/mongo");
+var middleware = require('./middleware/middleware');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(middleware.defaultCallbacks);
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });

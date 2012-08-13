@@ -55,29 +55,20 @@ module.exports.update = function( req, res ) {
   var data = req.body;
   Blog.findByIdAndUpdate( req.params.id, data, function( err, blog ) {
     if( err ) {
-      sendError( res );
+      res.sendError();
       return; 
     }
-    sendSuccess( res );
+    res.sendSuccess();
   });
 };
 
 module.exports.destroy = function( req, res ) {
   Blog.findByIdAndRemove( req.params.id, function( err ) {
     if( err ) {
-      console.log( err );
-      sendError( res );
+      res.sendError();
       return;
     }
     
-    sendSuccess( res );
+    res.sendSuccess();
   });
 };
-
-function sendError( res ) {
-  res.send( { status: 'error' } );
-}
-
-function sendSuccess( res ) {
-  res.send( { status: 'success' } );
-}

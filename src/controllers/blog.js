@@ -1,9 +1,10 @@
 var Blog = require('../models').Blog;
+var marked = require('marked');
 
 module.exports.index = function( req, res ) {
   Blog.find({}, function( err, blogs) {
     if( err ) {
-      sendError( res );
+      res.sendError();
       return;
     }
     
@@ -17,21 +18,18 @@ module.exports.index = function( req, res ) {
 
 module.exports.show = function( req, res ) {
   Blog.findById( req.params.id, function( err, blog ) {
+    var html;
     if( err ) {
-      
+      res.sendError();
+      return;
     }
+    
+    html = marked( blog.article );
     
     res.render('blog/show', {
       title: blog.title,
-      blog: blog
+      blog: blog,
+      article: html
     });
   });
 };
-
-function sendError( res ) {
-  res.send( { status: 'error' } );
-}
-
-function sendSuccess( res ) {
-  res.send( { status: 'success' } );
-}
