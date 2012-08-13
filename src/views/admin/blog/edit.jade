@@ -1,0 +1,22 @@
+extends ../../layout
+
+append scripts
+  script(src="/javascripts/blog/edit.js")
+
+block content
+  form( id='form', action='/blog/' + blog._id)
+    h3 Title
+    input( id='title', name='title', type='text', value=blog.title ) 
+    
+    h3 Article
+    textarea( id='article', name='article' )
+      !{blog.article}
+  
+    h3 Author
+    input( id='authur', name='author', type='text', value=blog.author )
+    
+    h3 Date
+    input( id='creation_date', name="creation_date", type="text", value=blog.creation_date )
+    
+    br
+    button( data-id=blog._id) Submit

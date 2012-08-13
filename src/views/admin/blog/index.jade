@@ -1,0 +1,10 @@
+extends ../../layout
+
+block content
+  h1 My blog landing page.
+  ul
+  - each blog in blogs
+    include ../../includes/blog/_blog
+
+  
+  a(href="/admin/blog/new") New Article

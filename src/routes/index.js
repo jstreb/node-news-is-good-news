@@ -1,6 +1,7 @@
 var controllers = require('../controllers')
   , home = controllers.Home
-  , blog = controllers.Blog;
+  , blog = controllers.Blog
+  , adminBlog = controllers.AdminBlog;
 
 module.exports = function( app ){
   //Home page
@@ -8,6 +9,9 @@ module.exports = function( app ){
   
   //Blogs
   app.get( '/blog', blog.index );
-  app.get( '/blog/new', blog.newBlog );
-  app.post( '/blog', blog.create );
+  
+  //Admin section
+  app.get( '/admin/blog', adminBlog.index );
+  app.get( '/admin/blog/new', adminBlog.new );
+  app.post( '/admin/blog', adminBlog.create );
 };
