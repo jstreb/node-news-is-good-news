@@ -4,7 +4,7 @@ append scripts
   script(src="/javascripts/blog/edit.js")
 
 block content
-  form( id='form', action='/blog/' + blog._id)
+  form( id='form', action='/admin/blog/' + blog._id)
     h3 Title
     input( id='title', name='title', type='text', value=blog.title ) 
     
@@ -19,4 +19,5 @@ block content
     input( id='creation_date', name="creation_date", type="text", value=blog.creation_date )
     
     br
-    button( data-id=blog._id) Submit
+    button.submit( data-id="#{blog._id}") Submit
+    button.delete( data-id="#{blog._id}") Delete

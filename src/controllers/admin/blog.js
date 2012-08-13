@@ -36,3 +36,48 @@ module.exports.create = function( req, res ) {
     res.redirect( '/admin/blog' );
   });
 };
+
+module.exports.edit = function( req, res ) {
+  Blog.findById( req.params.id, function( err, blog ) {
+    if( err ) {
+      sendError( res );
+      return;
+    }
+
+    res.render('admin/blog/edit', {
+      title: 'Blog Edit',
+      blog: blog
+    });
+  });
+};
+
+module.exports.update = function( req, res ) {
+  var data = req.body;
+  Blog.findByIdAndUpdate( req.params.id, data, function( err, blog ) {
+    if( err ) {
+      sendError( res );
+      return; 
+    }
+    sendSuccess( res );
+  });
+};
+
+module.exports.destroy = function( req, res ) {
+  Blog.findByIdAndRemove( req.params.id, function( err ) {
+    if( err ) {
+      console.log( err );
+      sendError( res );
+      return;
+    }
+    
+    sendSuccess( res );
+  });
+};
+
+function sendError( res ) {
+  res.send( { status: 'error' } );
+}
+
+function sendSuccess( res ) {
+  res.send( { status: 'success' } );
+}

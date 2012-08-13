@@ -3,5 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+      script(src='/javascripts/vendors/jquery.js')
   body
     block content

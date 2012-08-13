@@ -9,9 +9,13 @@ module.exports = function( app ){
   
   //Blogs
   app.get( '/blog', blog.index );
+  app.get( '/blog/:id', blog.show );
   
   //Admin section
   app.get( '/admin/blog', adminBlog.index );
   app.get( '/admin/blog/new', adminBlog.new );
   app.post( '/admin/blog', adminBlog.create );
+  app.get( '/admin/blog/edit/:id', adminBlog.edit );
+  app.put( '/admin/blog/:id', adminBlog.update );
+  app['delete']( '/admin/blog/:id', adminBlog.destroy );
 };
