@@ -2,11 +2,13 @@ extends ../../layout
 
 block content
   h1 My blog landing page.
-  ul
-  - each blog in blogs
-    li
-        a(href='/blog/' + blog._id ) #{blog.title}
-        span     -    
-        a(href="/admin/blog/edit/" + blog._id ) Edit
+  table.table.table-striped
+    - each blog in blogs
+      tr
+        td
+          a(href='/blog/' + blog._id ) #{blog.title}
+        td
+          a.edit(href="/admin/blog/edit/" + blog._id ) Edit
+          i.icon-edit
   
-  a(href="/admin/blog/new") New Article
+  a.btn-primary.btn(href="/admin/blog/new") New Article

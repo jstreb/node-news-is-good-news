@@ -1,5 +1,6 @@
 furious-mountain
 ================
 
-* Added in middleware for sendError and sendSuccess in order to DRY things up.
-* Added support to render markdown as HTML.
+* Make it look better :)
+* Add twitter bootstrap for some styling.
+* Add some JS to make forms more interactive.

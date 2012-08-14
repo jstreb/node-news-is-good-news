@@ -19,5 +19,5 @@ block content
     input( id='creation_date', name="creation_date", type="text", value=blog.creation_date )
     
     br
-    button.submit( data-id="#{blog._id}") Submit
-    button.delete( data-id="#{blog._id}") Delete
+    button.btn.btn-primary.submit( data-id="#{blog._id}") Save
+    button.btn.btn-danger.delete( data-id="#{blog._id}") Delete

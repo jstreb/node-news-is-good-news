@@ -2,8 +2,13 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
     block scripts
       script(src='/javascripts/vendors/jquery.js')
+      script(src='/javascripts/vendors/bootstrap.js')
   body
-    block content
+    include ./includes/_header
+    .container
+      block content
