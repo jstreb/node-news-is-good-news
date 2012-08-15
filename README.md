@@ -6,11 +6,9 @@ Overview
 
 In part2 we are going to add a new section for blogs.  To do this we need to add a new view which can be found under
 
-  /views
-    /blogs
-      /index.jade
+  `/views/blogs/index.jade`
 
-However, the big thing we are doing in this section is introducing the concept of controllers.  This was probably the biggest thing I was missing in my node / express app.  I ended up with a routes files that was way to big.  Although, it is unnecessary for such a small site, we are going to add the idea of controllers early in order to keep our code organized and able to grow without having to refactor.  
+However, the big thing we are doing in this section is introducing the concept of controllers.  This was probably the biggest thing I was missing in my node / express app when I got started.  I ended up with a routes files that was way too big.  Although, it is unnecessary for such a small site, we are going to add the idea of controllers early in order to keep our code organized and able to grow without having to refactor.  
 
 Things to notice
 ================
