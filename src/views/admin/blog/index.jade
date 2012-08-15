@@ -5,8 +5,8 @@ block content
   ul
   - each blog in blogs
     li
-        a(href='/blog/' + blog._id ) #{blog.title}
-        span     -    
-        a(href="/admin/blog/edit/" + blog._id ) Edit
+      a(href='/blog/' + blog._id ) #{blog.title}
+      span     -    
+      a(href="/admin/blog/edit/" + blog._id ) Edit
   
   a(href="/admin/blog/new") New Article
