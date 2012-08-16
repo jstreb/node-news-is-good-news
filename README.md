@@ -1,21 +1,18 @@
-Nogging part 7
+Nogging
 ===============
 
 Overview
 ===============
 
-Part 7 is all about our site looking better.  The two big ways we are going to do this are:
+Nogging was created to help demonstrate how to organize your express application.  Specifically, we introduce the idea of controllers and break out the routes from the app.js file.  This repo has 7 different remote feature branches that each build upon each other, but after 7 steps we end up with a blogging site that allows us to create, edit, delete and read different articles.  (CRUD)
 
-* Add [twitter bootstrap](http://twitter.github.com/bootstrap/) for some styles.
-* Add some JavaScript so that our forms are more responsive.  (This could be taken a step further)
+Install
+================
+* Clone this repo `git clone https://github.com/jstreb/furious-mountain.git`
+* Switch between branches to follow along with the creation progression of the site using the commands `git checkout part1`, `git checkout part2`...etc.
+* When we introduce models and mongo you will need to have mongo installed and running.  Step4 covers getting mongo up and running.
 
 Things to notice
 ================
 
-In our layout.jade file we will add the bootstrap files, so that they will be included in all of the views.  If you have been using [jade](https://github.com/visionmedia/jade) for sometime now, but haven't upgraded to the latest you may notice that things look a bit different.  You can now extend a layout from your jade file you are serving and can append to `blocks`.  This is useful for including specific JavaScript files on for a given page.
-
-If you haven't used twitter bootstrap before it is *AWESOME*.  
-
-Helpful Tip
-================
-Use the scripts feature in your package.json file to provide easy commands to start your server or run your tests. You will notice that our package.json now has the start command of nodemon app.js to help enforce the use of nodemon.
+In each remote branch, 'part1', 'part2'...the readme file updates with notes about that section.  You should be sure to checkout those notes for what to look for, along with some helpful tips.
