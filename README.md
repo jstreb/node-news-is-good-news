@@ -1,4 +1,4 @@
-Nogging part 6
+node-news-is-good-news part 6
 ===============
 
 Overview
