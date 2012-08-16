@@ -36,3 +36,7 @@ module.exports.create = function( req, res ) {
     res.redirect( '/admin/blog' );
   });
 };
+
+function sendError( res ) {
+  res.send( { status: "error" } );
+}
