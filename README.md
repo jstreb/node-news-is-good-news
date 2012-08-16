@@ -1,4 +1,4 @@
-Nogging
+Node-news-is-good-news
 ===============
 
 Overview
