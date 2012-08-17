@@ -6,9 +6,9 @@ Overview
 
 In part2 we are going to add a new section for blogs.  To do this we need to add a new view which can be found under
 
-  `/views/blogs/index.jade`
+`/views/blogs/index.jade`
 
-However, the big thing we are doing in this section is introducing the concept of controllers.  This was probably the biggest thing I was missing in my node / express app when I got started.  I ended up with a routes files that was way too big.  Although, it is unnecessary for such a small site, we are going to add the idea of controllers early in order to keep our code organized and able to grow without having to refactor.  
+However, the big thing we are doing in this section is introducing the concept of controllers.  This was probably the biggest thing I was missing in my node / express app when I got started.  I ended up with a routes files that was way too big.  Although, it is unnecessary for such a small site, we are going to add the idea of controllers early in order to keep our code organized and able to grow without having to refactor.  If you restart your server and open `http://localhost:3000/blog` we will see our new page. 
 
 Things to notice
 ================
@@ -20,4 +20,4 @@ Okay, nothing exciting yet, but we have a decent foundation for adding a lot mor
 Helpful tip
 ================
 
-After switching to this branch of the repo, you had to kill your node.js server and restart it.  Having to stop / restart the server every time you make a change would be very painful.  Fortunately there is a module called [nodemon](https://github.com/remy/nodemon/) that solves this for us, by automatically restarting the server when it detects that a file has changed.  You can install / find the repo [here](https://github.com/remy/nodemon/).
+Use the scripts feature in your package.json file to provide easy commands to start your server or run your tests. You will notice that our package.json now has the start command of nodemon src/app.js to help enforce the use of nodemon.  To use this you simply run `npm start` and it will run this command.  This is a great way to add commands for things like running your tests.
