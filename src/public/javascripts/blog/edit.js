@@ -43,7 +43,7 @@
         type: "DELETE"
       }
     ).success( function( data ) {
-      //We ar eassuming success here, but we should be checking the response and handling appropriately.
+      //We are assuming success here, but we should be checking the response and handling appropriately.
       $this.text( "Deleted" );
       setTimeout( function() {
         location.href = "/admin/blog/";
